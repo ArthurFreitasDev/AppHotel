@@ -42,7 +42,7 @@ namespace AppHotel
             //MainPage = new NavigationPage(new View.ComtratacaoHospedagem());
 
             if (Properties.ContainsKey("Usuario_Logado"))
-                MainPage = new NavigationPage(new View.ComtratacaoHospedagem());
+                MainPage = new NavigationPage(new View.ContratacaoHospedagem());
             else
                 MainPage = new NavigationPage(new View.Login());
         }
