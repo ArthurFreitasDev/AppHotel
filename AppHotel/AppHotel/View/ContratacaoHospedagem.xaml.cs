@@ -13,12 +13,23 @@ namespace AppHotel.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContratacaoHospedagem : ContentPage
     {
+        App PropriedadesApp;
         public ContratacaoHospedagem()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            PropriedadesApp
+            PropriedadesApp = (App) Application.Current;
+
+            lbl_Usuario.Text = App.Current.Properties["Usuario_Logado"].ToString();
+
+            pck_Suite.ItemsSource = PropriedadesApp.Lista_Suites;
+
+            dtpck_Checkin.MinimumDate = DateTime.Now;
+            dtpck_Checkin.MinimumDate = DateTime.Now.AddMonths(6);
+
+            dtpck_CheckOut.MinimumDate = DateTime.Now.AddDays(1);
+            dtpck_CheckOut.MaximumDate = DateTime.Now.AddMonths(6).AddDays(1);
         }
 
         private void dtpck_Checkin_DateSelected(object sender, DateChangedEventArgs e)
