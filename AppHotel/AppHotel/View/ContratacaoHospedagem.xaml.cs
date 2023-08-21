@@ -27,7 +27,7 @@ namespace AppHotel.View
             pck_Suite.ItemsSource = PropriedadesApp.Lista_Suites;
 
             dtpck_Checkin.MinimumDate = DateTime.Now;
-            dtpck_Checkin.MinimumDate = DateTime.Now.AddMonths(6);
+            dtpck_Checkin.MaximumDate = DateTime.Now.AddMonths(6);
 
             dtpck_CheckOut.MinimumDate = DateTime.Now.AddDays(1);
             dtpck_CheckOut.MaximumDate = DateTime.Now.AddMonths(6).AddDays(1);
