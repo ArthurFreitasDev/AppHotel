@@ -2,19 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppHotel.View.ContratacaoHospedagem"
-             BackgroundColor="DarkOliveGreen">
+             BackgroundColor="#836FFF">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Cálculo de Hospedagem"
                    HorizontalTextAlignment="Center"
-                   FontSize="Title" TextColor="White"/>
+                   FontSize="40" TextColor="White"
+                   Padding="10"/>
 
             <Label x:Name="lbl_Usuario"
                    HorizontalTextAlignment="Center"
-                   TextColor="White"/>
+                   TextColor="White"
+                   FontSize="20"/>
 
             <Frame CornerRadius="10"
-                   BackgroundColor="#eee"
+                   BackgroundColor="White"
                    Margin="10,0,10,10"
                    Padding="20">
 
@@ -51,8 +53,9 @@
                             ItemDisplayBinding="{Binding Nome}"
                             Title="Selecione sua Acomodação"/>
 
-                    <Frame BackgroundColor="#ddd"
-                           CornerRadius="10" Margin="10">
+                    <Frame BackgroundColor="White"
+                           CornerRadius="10" Margin="10"
+                           >
                         <StackLayout>
                             <Label Text="Período da Estadia"/>
 
@@ -70,13 +73,14 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-
-                    <Button Text="Calcular Hospedagem" Clicked="Button_Clicked"/>
+                    //Colocar uma grid nos botoes
+                    <Button Text="Calcular Hospedagem" Clicked="Button_Clicked"
+                            Style="{StaticResource BotaoContratacao}"/>
 
                     <Button Text="Sair" 
                             Clicked="Button_Clicked_1"
                             TextColor="Black"
-                            BackgroundColor="#ccc"/>
+                            Style="{StaticResource BotaoContratacao}"/>
 
                 </StackLayout>
             </Frame>
