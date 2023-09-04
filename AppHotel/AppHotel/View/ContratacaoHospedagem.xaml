@@ -73,15 +73,18 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    //Colocar uma grid nos botoes
-                    <Button Text="Calcular Hospedagem" Clicked="Button_Clicked"
+                    <Grid ColumnDefinitions="*"
+                          RowDefinitions="*, *">
+                        <Button Grid.Row="0" Grid.Column="0" 
+                            Text="Calcular Hospedagem" Clicked="Button_Clicked"
                             Style="{StaticResource BotaoContratacao}"/>
 
-                    <Button Text="Sair" 
+                        <Button Grid.Row="1" Grid.Column="0"
+                            Text="Sair" 
                             Clicked="Button_Clicked_1"
                             TextColor="Black"
                             Style="{StaticResource BotaoContratacao}"/>
-
+                    </Grid>
                 </StackLayout>
             </Frame>
         </StackLayout>

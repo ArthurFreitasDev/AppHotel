@@ -5,43 +5,51 @@
              BackgroundColor="#836FFF">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Detalhes da Estadia"/>
-            <Label Text="{Binding Path=QuartoEscolhido.Nome}"
-                   FontSize="Title"/>
+            <StackLayout HorizontalOptions="Center"
+                         >
+                <Label Text="Detalhes da Estadia" FontSize="Title"/>
+                <Label Text="{Binding Path=QuartoEscolhido.Nome}"
+                       HorizontalOptions="Center"
+                       FontSize="Title"/>
+            </StackLayout>
+
 
             <Frame CornerRadius="10">
-                <StackLayout Orientation="Horizontal">
-                    <Label>
+                <Grid ColumnDefinitions="2*, 2*"
+                      RowDefinitions="*, *, *">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Data CheckIn: "/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Data CheckOut: "/>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Estadia: "/>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/mm/yyyy}'}"
+                           HorizontalOptions="End"
+                           TextColor="Black"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/mm/yyyy}'}"
+                           HorizontalOptions="End"
+                           TextColor="Black"/>
+                    <Label Grid.Row="2" Grid.Column="0" Text="{Binding Estadia}"
+                           HorizontalOptions="End"
+                           TextColor="Black"/>
+                    
+                    
+                    <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Adultos: "/>
                                 <Span Text="{Binding QntAdultos}"
-                                      TextColor="DarkRed"/>
+                                      TextColor="Black"/>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label>
+                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="End">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Crianças: "/>
                                 <Span Text="{Binding QntCriancas}"
-                                      TextColor="DarkRed"/>
+                                      TextColor="Black"/>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                </StackLayout>
-            </Frame>
-
-            <Frame CornerRadius="10">
-                <Grid ColumnDefinitions="*, *, *"
-                      RowDefinitions="*, *">
-                    <Label Grid.Row="0" Grid.Column="0" Text="Data CheckIn: "/>
-                    <Label Grid.Row="0" Grid.Column="1" Text="Data CheckOut: "/>
-                    <Label Grid.Row="0" Grid.Column="2" Text="Estadia: "/>
-
-                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/mm/yyyy}'}"/>
-                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/mm/yyyy}'}"/>
-                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}"/>
                 </Grid>
             </Frame>
 
@@ -49,7 +57,7 @@
                 <Label>
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Valor Hospedagem:"/>
+                            <Span Text="Valor Hospedagem:" FontSize="Title"/>
                             <Span Text="{Binding ValorTotal, StringFormat='{}{0:c}'}" FontSize="Title"/>
                         </FormattedString>
                     </Label.FormattedText>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppHotel.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,14 @@ namespace AppHotel.View
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-
+            try
+            {
+                App.Current.MainPage = new NavigationPage(new Login());
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Ops", ex.Message, "Ok");
+            }
         }
     }
 }
